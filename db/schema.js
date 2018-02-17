@@ -1,22 +1,25 @@
 const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
+    dateCreated: Date, 
     userName: String,
-    firstName: String,
-    lastName: String
+    password: String,
+    email: String,
+    prompts: [],
+    stories: []
 });
 
 const storySchema = mongoose.Schema({
+    dateCreated: Date,
     title: String,
     content: String,
-    genres: [],
-    userId: String
+    author: String,
 });
 
 const promptSchema = mongoose.Schema({
-    title: String,
+    dateCreated: Date,
     content: String,
-    userId: String,
+    author: String,
     stories: [storySchema]
 });
 
